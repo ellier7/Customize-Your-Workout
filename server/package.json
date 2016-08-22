@@ -1,0 +1,25 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "custom workouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellier7/MKS-solo.git"
+  },
+  "author": "ellie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellier7/MKS-solo/issues"
+  },
+  "homepage": "https://github.com/ellier7/MKS-solo#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.15.0",
+    "mongoose": "^4.5.9"
+  }
+}
