@@ -1,11 +1,11 @@
 <!DOCTYPE>
 <html ng-app="myApp">
 <head>
-<!-- Latest compiled and minified CSS -->
+<!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-
-<!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
 
   <title>Workout App</title>
 </head>
@@ -18,35 +18,42 @@
         <tr>
           <th>Title</th>         
           <th>URL</th>
-          <th>Category</th>
-        </tr>
+          <th>Category<input type='text' ng-model='search' placeholder='filter'></th>
       </thead>
+        </tr>
       <tbody>
       <tr>
-      	<td>
-      		<input class="form-control" ng-model='video.title'>
-      	</td>
-      	<td><input class="form-control" ng-model='video.url'>
-      	</td>
-      	<td><input class="form-control" ng-model='video.category'>
-      	</td>
-      	<td><button class='btn btn-primary' ng-click="addContact()">
-<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td>
-      	<td><button class='btn btn-info' ng-click="update()">
+        <td>
+          <input class="form-control" ng-model='video.title'>
+        </td>
+        <td><input class="form-control" ng-model='video.url'>
+        </td>
+        <td><input class="form-control" ng-model='video.category'>
+        </td>
+        <td><button class='btn btn-success' ng-click="addContact()">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td>
+        <td><button class='btn btn-info' ng-click="update()">
         <span class="glyphicon glyphicon-check" aria-hidden="true"></span></button></td>
       </tr>
-      	<tr ng-repeat="video in videoList">
-      		<td>{{video.title}}</td>
-      		<td>{{video.url}}</td>
-      		<td>{{video.category}}</td>
+
+        <tr ng-repeat="video in videoList | filter:search | orderBy:'created_at'">
+          <td>{{video.title}}</td>
+          <td> <a href='http://{{video.url}}'>{{video.url}}</td>
+          <td>{{video.category}}</td>
      <td>
       <button type="button" class="btn btn-danger" ng-click='remove(video._id)'>
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
-      <td><button class="btn btn-warning" ng-click='edit(video._id)'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </button>
+      </td>
+      <td>
+      <button class="btn btn-warning" ng-click='edit(video._id)'>
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+      </button>
       </td>
       </tr>
       </tbody>
 </div>
+      
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 <script src="controllers/controller.js"></script>
 
