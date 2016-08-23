@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "### Objective: Build a fullstack MVP from scratch in 32 hours",
   "main": "server.js",
-"engines": {
-   "node": "4.4.7",
-   "npm": "3.10.3"
- },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
