@@ -12,15 +12,15 @@ var bodyParser = require('body-parser');
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
+//mongojs find method returns entire collection
 app.get('/videoList', function(req, res){
-	// console.log("I received the get request");
 	db.videoList.find(function(err, docs){
 		// console.log(docs);
 		res.json(docs);
 	})
 });
 
-
+//mongo insert function adds to req.body
 app.post('/videoList', function(req, res){
 	// console.log(req.body);
 	db.videoList.insert(req.body, function(err, docs){
@@ -28,7 +28,7 @@ app.post('/videoList', function(req, res){
 	});
 });
 
-
+//remove by id
 app.delete('/videoList/:id', function(req, res){
 	var id = req.params.id;
 	// console.log(id);
@@ -37,6 +37,8 @@ app.delete('/videoList/:id', function(req, res){
 	})
 });
 
+//Apply a query and get one single document passed as a callback
+//the callback receives (err, document)
 app.get('/videoList/:id', function(req, res){
 	var id = req.params.id;
 	// console.log(id);
@@ -46,18 +48,27 @@ app.get('/videoList/:id', function(req, res){
 });
 
 
+//put request to edit video information
 app.put('/videoList/:id', function(req, res){
 	var id = req.params.id;
+	// find id that you want to edit
+	//set next values
+	//return the modified doc 
 	db.videoList.findAndModify({
-		query:{_id:mongojs.ObjectId(id)},
-		update: {$set: {title: req.body.title, url: req.body.url, category: req.body.category}},
-		new: true}, function(err, docs){
-			res.json(docs);
+		query:{ _id:mongojs.ObjectId(id) },
+		update: {
+			$set: 
+			{
+				title: req.body.title, 
+				url: req.body.url, 
+				category: req.body.category
+			}}, new: true}, function(err, doc){
+			res.json(doc);
 		}
 	);
 
 });
 
 
-app.listen(3000);
-console.log("server listening on 3000");
+app.listen(8000);
+console.log("server listening on 8000");

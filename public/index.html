@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="container" ng-controller="AppCtrl">
-    <h1>Customize Your Workout!</h1>
+    <h1>Customize Your Workout</h1>
 
     <table class="table">
       <thead>
@@ -19,12 +19,9 @@
           <th>Title</th>         
           <th>URL</th>
           <th>Category</th>
-          <!-- <th>Action</th> -->
         </tr>
       </thead>
-
       <tbody>
-
       <tr>
       	<td>
       		<input class="form-control" ng-model='video.title'>
@@ -33,17 +30,21 @@
       	</td>
       	<td><input class="form-control" ng-model='video.category'>
       	</td>
-      	<td><button class='btn btn-primary' ng-click="addContact()">Add video</button></td>
-      	<td><button class='btn btn-info' ng-click="update()">Update</button></td>
+      	<td><button class='btn btn-primary' ng-click="addContact()">
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></td>
+      	<td><button class='btn btn-info' ng-click="update()">
+        <span class="glyphicon glyphicon-check" aria-hidden="true"></span></button></td>
       </tr>
       	<tr ng-repeat="video in videoList">
       		<td>{{video.title}}</td>
       		<td>{{video.url}}</td>
       		<td>{{video.category}}</td>
-      		<td><button class="btn btn-danger" ng-click='remove(video._id)'>Remove</button></td>
-      		<td><button class="btn btn-warning" ng-click='edit(video._id)'>Edit</button></td>
-
-      	</tr>
+     <td>
+      <button type="button" class="btn btn-danger" ng-click='remove(video._id)'>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+      <td><button class="btn btn-warning" ng-click='edit(video._id)'><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+      </td>
+      </tr>
       </tbody>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
