@@ -11,7 +11,7 @@
   <title>Workout App</title>
 </head>
 <body>
-  <div class="container" ng-controller="AppCtrl">
+  <div class="container" ng-controller="VideoController">
     <h1>Customize Your Workout</h1>
 
     <table class="table table-striped">
@@ -40,7 +40,7 @@
 
         <tr ng-repeat="video in videoList | filter:search | orderBy:'created_at'">
           <td>{{video.title}}</td>
-          <td> <a href='http://{{video.url}}'>{{video.url}}</a></td>
+          <td> <a href='{{video.url}}' target="_blank">{{video.url}}</a></td>
           <td>{{video.category}}</td>
      <td>
       <button type="button" class="btn btn-danger" ng-click='remove(video._id)'>

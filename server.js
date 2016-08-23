@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('videoList', ['videoList']);
+var db = mongojs(process.env.MONGODB_URI || 'videoList', ['videoList']);
 var bodyParser = require('body-parser');
 
 // app.get('/', function(req, res){
@@ -68,6 +68,9 @@ app.put('/videoList/:id', function(req, res){
 	);
 
 });
+
+
+
 
 
 app.listen(process.env.PORT || 8000);
