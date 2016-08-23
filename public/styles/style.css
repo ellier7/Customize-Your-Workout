@@ -4,3 +4,7 @@ h1{
 	font-family: 'Baloo Paaji', cursive;
 }
 
+
+.filterBox{
+	float: right;
+}
