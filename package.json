@@ -1,13 +1,15 @@
 {
-  "name": "MKS-solo",
+  "name": "ellie",
   "version": "1.0.0",
-  "description": " ",
+  "description": "### Objective: Build a fullstack MVP from scratch in 32 hours",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {},
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellier7/MKS-solo.git"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
