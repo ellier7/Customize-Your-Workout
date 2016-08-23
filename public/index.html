@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="styles/style.css">
 <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
   <title>Workout App</title>
 </head>
@@ -13,12 +14,13 @@
   <div class="container" ng-controller="AppCtrl">
     <h1>Customize Your Workout</h1>
 
-    <table class="table">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th>Title</th>         
           <th>URL</th>
-          <th>Category<input class="filterBox" type='text' ng-model='search' placeholder='filter'></class></th>
+          <th>Category</class></th>
+          <th><input class="filterBox" type='text' ng-model='search' placeholder='filter'></th>
       </thead>
         </tr>
       <tbody>
@@ -38,7 +40,7 @@
 
         <tr ng-repeat="video in videoList | filter:search | orderBy:'created_at'">
           <td>{{video.title}}</td>
-          <td> <a href='http://{{video.url}}'>{{video.url}}</td>
+          <td> <a href='http://{{video.url}}'>{{video.url}}</a></td>
           <td>{{video.category}}</td>
      <td>
       <button type="button" class="btn btn-danger" ng-click='remove(video._id)'>
@@ -52,6 +54,9 @@
       </td>
       </tr>
       </tbody>
+      </thead>
+      </table>
+
 </div>
       
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>

@@ -2,9 +2,25 @@ h1{
 	text-align: center;
 	color: black;
 	font-family: 'Baloo Paaji', cursive;
+	font-size: 48px;
+	padding-top: 20px;
+	padding-bottom: 25px;
 }
 
+table{
+	font-family: 'Raleway', sans-serif;
+}
 
 .filterBox{
-	float: right;
+	width: 80px;
+	height: 20px;
+	float:left;
+}
+
+th{
+	text-align: center;
+}
+
+.btn{
+	float:right;
 }
