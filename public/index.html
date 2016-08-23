@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>Workout App</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Customize Your Workout!</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>         
+          <th>URL</th>
+          <th>Category</th>
+          <!-- <th>Action</th> -->
+        </tr>
+      </thead>
+
+      <tbody>
+
+      <tr>
+      	<td>
+      		<input class="form-control" ng-model='video.title'>
+      	</td>
+      	<td><input class="form-control" ng-model='video.url'>
+      	</td>
+      	<td><input class="form-control" ng-model='video.category'>
+      	</td>
+      	<td><button class='btn btn-primary' ng-click="addContact()">Add video</button></td>
+      	<td><button class='btn btn-info' ng-click="update()">Update</button></td>
+      </tr>
+      	<tr ng-repeat="video in videoList">
+      		<td>{{video.title}}</td>
+      		<td>{{video.url}}</td>
+      		<td>{{video.category}}</td>
+      		<td><button class="btn btn-danger" ng-click='remove(video._id)'>Remove</button></td>
+      		<td><button class="btn btn-warning" ng-click='edit(video._id)'>Edit</button></td>
+
+      	</tr>
+      </tbody>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+
+</body>
+</html>

@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ellier7/MKS-solo/issues"
   },
-  "homepage": "https://github.com/ellier7/MKS-solo#readme"
+  "homepage": "https://github.com/ellier7/MKS-solo#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
