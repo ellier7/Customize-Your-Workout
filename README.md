@@ -1,6 +1,5 @@
 
-# MVP (Solo) Project
+# MVP (Solo) Project - workout.io
 
-workout.io
-
-
+npm install
+node server.js
